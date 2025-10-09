@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Tarek Alexander Khnijer</title>
+
+  <!-- Meta Title -->
+  <meta name="title" content="Tarek Alexander Khnijer | Interaction Designer & Portfolio">
+  <!-- Meta Description (EN + SV) -->
+  <meta name="description" content="Portfolio of Tarek Alexander Khnijer, Interaction Design student in Malmö. Interaktionsdesigner i Malmö med bakgrund inom företagsekonomi och marknadsföring, fokuserar på UX, prototyper och sensorisk design.">
+  <!-- Meta Keywords (EN + SV) -->
+  <meta name="keywords" content="Tarek Khnijer, Portfolio, Interaction Design, Interaktionsdesign, UX, UI, Prototyping, Game Testing, Speldesign, Malmö University, Malmö Universitet, Designer, Kreativ strategi, Digitala upplevelser, Scent Interaction">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Responsive css -->
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <!-- ======================= Custom Overrides ======================= -->
+  <style>
+    :root{
+      --brand:#c44545;        /* أحمر ناعم */
+      --brand-600:#a83232;    /* أغمق للهوفر */
+      --gold:#d4af37;         /* الذهبي */
+      --grey:#dcdcdc;         /* الرمادي الفاتح */
+      --ink:#111111;          /* النص */
+      --bg:#ffffff;           /* الخلفية */
+    }
+    #press .card { border:0; box-shadow:0 10px 28px rgba(0,0,0,.08); transition: all .2s ease; }
+#press .card:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(0,0,0,.12); }
+#press .badge { border-radius:999px; padding:.4rem .6rem; font-weight:600; }
+#press .card-title { font-weight:700; }
+@media (prefers-color-scheme: dark){
+  #press .card { background:#0f1524; }
+}
+
+    /* الوضع الليلي */
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b0f19;
+        --ink:#e5e7eb;
+        --grey:#334155;
+      }
+      body{ background:var(--bg); color:var(--ink); }
+    }
+
+    /* نصوص وروابط */
+    .text-brand, .text-danger{ color:var(--brand) !important; }
+    a{ color:var(--brand); text-decoration:none; transition:color .2s ease; }
+    a:hover{ color:var(--brand-600); }
+    a:focus{ outline:3px solid var(--brand-600); outline-offset:2px; border-radius:4px; }
+
+    /* أزرار (توافق مع البراند) */
+    .btn, .btn-brand, .btn-danger{
+      transform: translateY(0);
+      transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+      cursor: pointer;
+    }
+    .btn-brand, .btn-danger{
+      background:var(--brand); border-color:var(--brand); color:#fff;
+    }
+    .btn-brand:hover, .btn-danger:hover{
+      background:var(--brand-600); border-color:var(--brand-600);
+      transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,.12);
+    }
+    .btn-outline-light{
+      border:1px solid rgba(255,255,255,.75); color:#fff;
+    }
+    .btn-outline-light:hover{ background:rgba(255,255,255,.12); }
+
+    /* =================== الهيدر بخلفية دافئة + تظليل يسار =================== */
+    #header.home{
+      position: relative;
+      min-height:100vh;
+      display:flex; align-items:center;
+      color:#fff;
+      /* نفصل خصائص الخلفية لضبطها بالموبايل */
+      background-image:
+        linear-gradient(to right, rgba(11,15,25,.75) 0%, rgba(11,15,25,.35) 40%, rgba(11,15,25,0) 70%),
+        url('images/home-bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center right;
+      background-attachment: fixed; /* ثابت على الديسكتوب */
+      transition: background-position .6s ease;
+    }
+    #header.home:hover{ background-position: calc(100% - 10px) center; }
+    #header .header-content h1, #header .header-content p{
+      color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.5);
+    }
+
+    /* موبايل/أجهزة لمس: ألغِ fixed لتفادي مشاكل iOS/Android */
+    @media (max-width: 991.98px){
+      #header.home{
+        background-attachment: scroll;
+        background-position: center; /* أكثر أمانًا على الشاشات الصغيرة */
+      }
+    }
+
+    /* بورتفوليو: نص فوق الصور مقروء دائمًا */
+    .image-text{
+      position:absolute; left:0; right:0; bottom:0; padding:.6rem .8rem; color:#fff; font-weight:600;
+      background:linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));
+    }
+
+    /* Progress bars */
+    .progress{ background:#e5e7eb; }
+    .progress-bar.bg-danger, .progress-bar.bg-brand{ background:var(--brand) !important; }
+
+    /* تفاعل خفيف لثَمبنايل البورتفوليو */
+    .portfolio-thumbnail{ position:relative; overflow:hidden; border-radius:14px; transition: transform .2s ease, box-shadow .25s ease; box-shadow:0 8px 20px rgba(0,0,0,.08); }
+    .portfolio-thumbnail img{ display:block; width:100%; transition: transform .35s ease; }
+    .portfolio-thumbnail:hover{ transform: translateY(-4px); box-shadow:0 16px 32px rgba(0,0,0,.14); }
+    .portfolio-thumbnail:hover img{ transform: scale(1.04); }
+
+    /* =================== مساواة ارتفاع بطاقات الـ Resume =================== */
+    #resume .row.equalize{
+      display:flex; flex-wrap:wrap; align-items:stretch;
+    }
+    #resume .row.equalize > [class*="col-"]{
+      display:flex; flex-direction:column;
+    }
+    #resume .row.equalize .card{
+      display:flex; flex-direction:column; flex:1 1 auto; justify-content:space-between;
+    }
+    #resume .row.equalize .card-body{
+      display:flex; flex-direction:column; flex:1 1 auto;
+    }
+
+    /* احترام تقليل الحركة */
+    @media (prefers-reduced-motion: reduce){
+      *{ transition:none !important; animation:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- start section navbar -->
+  <nav id="main-nav">
+    <div class="row">
+      <div class="container">
+
+        
+
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round" aria-label="Open navigation"></i></div>
+
+        <ul class="nav-menu list-unstyled">
+          <li><a href="#header" class="smoothScroll">Home</a></li>
+          <li><a href="#about" class="smoothScroll">About</a></li>
+          <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
+          <li><a href="#journal" class="smoothScroll">Blog</a></li>
+          <li><a href="#press" class="smoothScroll">Press</a></li>
+          <li><a href="#contact" class="smoothScroll">Contact</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <!-- End section navbar -->
+
+  <!-- start section header -->
+  <div id="header" class="home">
+    <div class="container">
+      <div class="header-content">
+        <h1>I'm <span class="typed"></span></h1>
+        <p>Designer, Economist, Strategist, Photographer</p>
+
+        <ul class="list-unstyled list-social">
+          <li><a href="https://www.facebook.com/share/1CvKpyGq5f/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="ion-social-facebook"></i></a></li>
+          <li><a href="https://www.instagram.com/tarekalexanderkhnijer?igsh=MWh1aDJ3eDNhaWhnZA%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="ion-social-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/tarek-alexander-khnijer-a9a128128" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ion-social-linkedin"></i></a></li>
+        </ul>
+
+       
+      </div>
+    </div>
+  </div>
+  <!-- End section header -->
+
+  <!-- start section about us -->
+  <div id="about" class="paddsection">
+    <div class="container">
+      <div class="row justify-content-between">
+
+        <div class="col-lg-4">
+          <div class="div-img-bg">
+            <div class="about-img">
+              <img src="images/me.jpg" class="img-responsive" alt="Portrait photo of Tarek Alexander Khnijer" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="about-descr">
+            <p class="p-heading">I'm an aspiring Interaction Design (IxD) student with a unique blend of business acumen and creative flair, dedicated to crafting clean, simple, and engaging digital experiences.</p>
+            <p class="separator">My expertise lies at the intersection of design, business understanding, and technology. With an educational background in business administration and marketing, complemented by a specialization in accounting, I bring a strong analytical and strategic foundation to the field of interaction design.</p>
+            <a href="pdf/TAREK KHNIJER CV.pdf" class="btn btn-brand"><i class="icon-down-circled2"></i> Download My CV</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- end section about us -->
+
+  <!-- Resume Section -->
+  <section class="section" id="resume">
+    <div class="container">
+      <h3 class="mb-5"><span class="text-brand">My</span> Resume</h3>
+
+      <!-- استخدم equalize + g-4 للمسافات -->
+      <div class="row equalize g-4">
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="card flex-fill h-100">
+            <div class="card-header">
+              <div class="mt-2">
+                <h4>Expertise</h4>
+                <span class="line"></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6 class="title text-brand">2021 - 2025</h6>
+              <p>Lantmännen — Machine/Warehouse worker, Malmö</p>
+              <p class="subtitle">Hands-on experience in logistics and warehouse operations: inventory, organizing goods, forklift operations, and efficient delivery handling to meet deadlines.</p>
+              <hr>
+              <h6 class="title text-brand">2024</h6>
+              <p>Olfactory Design and Research (ODR) Group, Malmö University</p>
+              <p class="subtitle">Internship with Prof. Simon Niedenthal and Jaz Brooks exploring scent in game design, prototyping and testing mechanics in the IOIO Lab; strengthened teamwork, design craft, and passion for sensory interaction.</p>
+              <div class="mt-auto"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="card flex-fill h-100">
+            <div class="card-header">
+              <div class="mt-2">
+                <h4>Education</h4>
+                <span class="line"></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6 class="title text-brand">2022 - Present</h6>
+              <p>Interaction Design, Malmö University</p>
+              <p class="subtitle">Creating experiences with products and services; building a repertoire of methods, skills, and theoretical perspectives.</p>
+              <hr>
+              <h6 class="title text-brand">2020 - 2021</h6>
+              <p>Diploma in Accounting, Stockholm</p>
+              <p class="subtitle">Economics, accounting, and administration: bookkeeping, payments, payroll, and taxes for finance departments, staffing agencies, small businesses, or accounting firms.</p>
+              <hr>
+              <h6 class="title text-brand">2008 - 2012</h6>
+              <p>Business Administration and Marketing, Aleppo University</p>
+              <p class="subtitle">Finance, international trade, capital, growth, corporate management, marketing, HR and organization.</p>
+              <div class="mt-auto"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-flex">
+          <div class="card flex-fill h-100">
+            <div class="card-header">
+              <div class="pull-left">
+                <h4 class="mt-2">Software</h4>
+                <span class="line"></span>
+              </div>
+            </div>
+            <div class="card-body pb-2">
+              <h6 class="mb-1">HTML5 &amp; CSS3</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="HTML & CSS skill 80%"></div></div>
+
+              <h6 class="mb-1">JavaScript</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript skill 50%"></div></div>
+
+              <h6 class="mb-1">C++</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="C++ skill 50%"></div></div>
+
+              <h6 class="mb-1">Adobe Illustrator</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" aria-label="Illustrator skill 69%"></div></div>
+
+              <h6 class="mb-1">API</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" aria-label="API skill 30%"></div></div>
+
+              <h6 class="mb-1">Figma</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Figma skill 90%"></div></div>
+
+              <div class="mt-auto"></div>
+            </div>
+          </div>
+
+          <div class="card mt-4 flex-fill h-100">
+            <div class="card-header">
+              <div class="pull-left">
+                <h4 class="mt-2">Skills</h4>
+                <span class="line"></span>
+              </div>
+            </div>
+            <div class="card-body pb-2">
+              <h6 class="mb-1">Game Testing</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Game testing 70%"></div></div>
+
+              <h6 class="mb-1">User Research</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="User research 50%"></div></div>
+
+              <h6 class="mb-1">Ideation & Sketching</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" aria-label="Ideation & Sketching 66%"></div></div>
+
+              <h6 class="mb-1">Wireframing & Prototyping</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Wireframing & Prototyping 70%"></div></div>
+
+              <h6 class="mb-1">Usability Testing</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Usability testing 50%"></div></div>
+
+              <h6 class="mb-1">Copywriting</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" aria-label="Copywriting 57%"></div></div>
+
+              <h6 class="mb-1">Scent Interaction</h6>
+              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="Scent interaction 55%"></div></div>
+
+              <div class="mt-auto"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- start section services -->
+  <div id="services">
+    <div class="container">
+      <div class="services-carousel owl-theme">
+
+        <div class="services-block">
+          <i class="ion-ios-browsers-outline" aria-hidden="true"></i>
+          <span>UI/UX DESIGN</span>
+          <p class="separator">I leverage my keen eye for aesthetics to create visually compelling and user-friendly designs, specializing in UX/UI principles that enhance user engagement and satisfaction.</p>
+        </div>
+
+        <div class="services-block">
+          <i class="ion-ios-lightbulb-outline" aria-hidden="true"></i>
+          <span>ECONOMIST</span>
+          <p class="separator">With a solid foundation in economic principles, I analyze market trends and data, providing insights that inform strategic decision-making and innovative solutions.</p>
+        </div>
+
+        <div class="services-block">
+          <i class="ion-ios-color-wand-outline" aria-hidden="true"></i>
+          <span>WEB DESIGN</span>
+          <p class="separator">Crafting engaging, user-friendly websites with a focus on aesthetics and functionality to meet brand and user expectations.</p>
+        </div>
+
+        <div class="services-block">
+          <i class="ion-social-android-outline" aria-hidden="true"></i>
+          <span>PRODUCT DESIGN</span>
+          <p class="separator">Developing practical, visually appealing products by balancing user needs with innovative design and functionality.</p>
+        </div>
+
+        <div class="services-block">
+          <i class="ion-ios-analytics-outline" aria-hidden="true"></i>
+          <span>STRATEGIST</span>
+          <p class="separator">I apply a blend of analytical and creative thinking to develop comprehensive strategies that align with business goals, driving growth and competitive advantage.</p>
+        </div>
+
+        <div class="services-block">
+          <i class="ion-ios-camera-outline" aria-hidden="true"></i>
+          <span>PHOTOGRAPHY</span>
+          <p class="separator">Capturing moments with precision and creativity to tell stories, highlight products, and enhance brand identities through visual storytelling.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- end section services -->
+
+  <!-- start section portfolio -->
+  <div id="portfolio" class="text-center paddsection">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>My Portfolio</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="portfolio-list">
+            <ul class="nav list-unstyled" id="portfolio-flters">
+              <li class="filter filter-active" data-filter=".all">all</li>
+              <li class="filter" data-filter=".branding">Prototype</li>
+              <li class="filter" data-filter=".mockups">Studio</li>
+              <li class="filter" data-filter=".uikits">App design</li>
+              <li class="filter" data-filter=".webdesign">Product design</li>
+              <li class="filter" data-filter=".photography">Photography</li>
+            </ul>
+          </div>
+
+          <div class="portfolio-container">
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits webdesign">
+              <a class="popup-img" href="images/portfolio/1.jpg">
+                <img src="images/portfolio/1.jpg" alt="Partitect app – event planning shopping list UI" loading="lazy">
+                <div class="image-text">PARTITECT APP</div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all mockups uikits">
+              <a class="popup-img" href="images/portfolio/2.jpg">
+                <img src="images/portfolio/2.jpg" alt="Augmented Reality wound monitoring prototype interface" loading="lazy">
+                <div class="image-text">(AR) Wound Monitoring</div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding webdesign">
+              <a class="popup-img" href="images/portfolio/3.jpg">
+                <img src="images/portfolio/3.jpg" alt="PyroFrost Drake – creative prototype visuals" loading="lazy">
+                <div class="image-text">PyroFrost Drake</div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all mockups webdesign">
+              <a class="popup-img" href="images/portfolio/4.jpg">
+                <img src="images/portfolio/4.jpg" alt="Climatise Scent – olfactory interaction concept" loading="lazy">
+                <div class="image-text">Climatise Scent</div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webdesign branding">
+              <a class="popup-img" href="images/portfolio/5.jpg">
+                <img src="images/portfolio/5.jpg" alt="Truth and Dare – UI exploration" loading="lazy">
+                <div class="image-text">Truth and Dare</div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all photography">
+              <a class="popup-img" href="images/portfolio/6.jpg">
+                <img src="images/portfolio/6.jpg" alt="The Three Nuns – photography shot" loading="lazy">
+                <div class="image-text">The Three Nuns</div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End section portfolio -->
+
+  <!-- start section journal -->
+  <div id="journal" class="text-left paddsection">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Journal</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="journal-block">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single 4.html"><img src="images/blog-post-big.vest.jpg" class="img-responsive" alt="SafePause Vest wearable concept" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single 4.html">SafePause Vest</a></h4>
+                <p class="separator">The SafePause Vest proposes automating breaks in warehouses to maintain alertness and reduce error by nudging regular pauses in high-risk environments.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single 5.html"><img src="images/blog-post-big.playtesting.jpg" class="img-responsive" alt="Playtesting session – sniff bluffing mechanic" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single 5.html">Game Design &amp; Playtesting</a></h4>
+                <p class="separator">With Simon Niedenthal at Malmö University, I explored game mechanics and refined “sniff bluffing” through iterative playtests, blending sensory cues with strategy.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single 6.html"><img src="images/blog-post-big.dexter.jpg" class="img-responsive" alt="Smell Dexter: Red Cards – scent detective game concept" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single 6.html">Smell Dexter</a></h4>
+                <p class="separator">Smell Dexter: Red Cards is a scent-detective game exploring cognitive dissonance—players read conflicting scent clues and decide which to trust.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single.html"><img src="images/blog-post-1.gif" class="img-responsive" alt="Climatise Scent – trigeminal stimulation & temperature perception" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single.html">Climatise Scent</a></h4>
+                <p class="separator">Exploring digital olfaction to influence temperature perception via trigeminal nerve stimulation—bridging scent art and interaction science.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single2.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="Partitect – minimalist planning UI" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single2.html">Partitect</a></h4>
+                <p class="separator">Event planning rethought with a user-praised shopping list. Minimalist design, continuous improvements from feedback, and accessibility in focus.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single3.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="AR Wound Monitoring – remote post-op care concept" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single3.html">(AR) Wound Monitoring</a></h4>
+                <p class="separator">A concept for precise wound tracking and better doctor–patient continuity in remote settings using AR and sensors.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End section journal -->
+<!-- ===================== Press / Exhibitions ===================== -->
+<section id="press" class="paddsection">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Press / Exhibitions</h2>
+      <p class="mb-0">Highlights from Scent Club activities, showcases, and competition entries.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="card flex-fill h-100">
+          <img src="images/malmouni.jpg" class="card-img-top" alt="Scent Club activity at Malmö University" loading="lazy">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1">Scent Club, ODR, Malmö University</h5>
+            <p class="text-muted mb-2">Showcase &amp; Playtest • Malmö, Sweden</p>
+            <p class="card-text">
+               olfactory interactions with the Olfactory Design &amp; Research group.
+            </p>
+            <div class="mt-auto d-flex gap-2 flex-wrap">
+              <span class="badge bg-light text-dark border">Olfactory</span>
+              <span class="badge bg-light text-dark border">Playtesting</span>
+              <span class="badge bg-light text-dark border">Exhibition</span>
+            </div>
+         </div>
+         <!-- <div class="card-footer bg-transparent">
+            <a href="blog-single 5.html" class="btn btn-brand btn-sm">View project</a>
+          </div>-->
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="card flex-fill h-100">
+          <img src="images/membership-certificate.jpg" class="card-img-top" alt="Membership Certificate" loading="lazy">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1">Interaction Design Foundation</h5>
+            <p class="text-muted mb-2"> • 2025 • Hello World</p>
+            <p class="card-text">
+              Membership Certificate
+            </p>
+            <div class="mt-auto d-flex gap-2 flex-wrap">
+              <span class="badge bg-light text-dark border">UX</span>
+              <span class="badge bg-light text-dark border">UI</span>
+              <span class="badge bg-light text-dark border">IxDF</span>
+            </div>
+          </div>
+         <!--  <div class="card-footer bg-transparent">
+            <a href="blog-single 4.html" class="btn btn-brand btn-sm">View project</a>
+          </div>-->
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="card flex-fill h-100">
+          <img src="images/Toyota.png" class="card-img-top" alt="Toyota Logistic Design Competition" loading="lazy">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1">Toyota Logistic Design Competition</h5>
+            <p class="text-muted mb-2">Competition Entry • 2025–2026 • Europe</p>
+            <p class="card-text">
+              Concept exploring logistics, safety, and sustainable interaction design.
+            </p>
+            <div class="mt-auto d-flex gap-2 flex-wrap">
+              <span class="badge bg-light text-dark border">Competition</span>
+              <span class="badge bg-light text-dark border">Logistics</span>
+              <span class="badge bg-light text-dark border">Sustainability</span>
+            </div>
+          </div>
+         <!--  <div class="card-footer bg-transparent">
+            <a href="#" class="btn btn-brand btn-sm">Concept PDF</a>
+          </div>-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- =================== /Press / Exhibitions =================== -->
+
+  <!-- start sectoion contact -->
+  <div id="contact" class="paddsection">
+    
+    <div class="container">
+      <div class="contact-block1">
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="contact-contact">
+              <h2 class="mb-30">GET IN TOUCH</h2>
+              <ul class="contact-details">
+                <li><span>Sweden, Malmö</span></li>
+                <li><span><a href="tel:+46760666669">+46 760 666 669</a></span></li>
+                <li><span><a href="mailto:Tarek_khnijer@hotmail.com">Tarek_khnijer@hotmail.com</a></span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <form action="https://formspree.io/f/xjkakdqa" method="POST" class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" id="email" name="_replyto" class="form-control" required>
+              </div>
+              <div class="col-12">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-control" required>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" rows="6" class="form-control" required></textarea>
+              </div>
+              <!-- Hidden fields -->
+              <input type="hidden" name="_subject" value="New message from portfolio">
+              <input type="hidden" name="_redirect" value="thanks.html">
+              <div class="col-12">
+                <button type="submit" class="btn btn-brand">Send Message</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end sectoion contact -->
+
+  <!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+        <ul class="list-unstyled">
+          <li><a href="https://www.facebook.com/share/1CvKpyGq5f/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="ion-social-facebook"></i></a></li>
+          <li><a href="https://www.instagram.com/tarekalexanderkhnijer?igsh=MWh1aDJ3eDNhaWhnZA%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="ion-social-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/tarek-alexander-khnijer-a9a128128" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ion-social-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End section footer -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Typed init (لو مش مفعّل داخل main.js) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      if (window.Typed){
+        new Typed('.typed', {
+          strings: ['Interaction Designer','UX Researcher','Product Thinker','Scent & Game Prototyper'],
+          typeSpeed: 60, backSpeed: 35, backDelay: 1200, loop: true
+        });
+      }
+    });
+  </script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
