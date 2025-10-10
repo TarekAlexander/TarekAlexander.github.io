@@ -157,10 +157,10 @@
     @media (prefers-reduced-motion: reduce){
       *{ transition:none !important; animation:none !important; }
     }
-    /* فكّ اللزق على الموبايل بدون تعديل الـHTML */
+    /* موبايل فقط */
 @media (max-width: 768px){
   .portfolio-container{
-    display: grid;
+    display: grid !important;
     grid-template-columns: 1fr;
     gap: 14px;
   }
@@ -170,11 +170,18 @@
     display: block;
     border-radius: 12px;
   }
-
-  #journal .row{
-    row-gap: 14px;
-  }
+  #journal .row{ row-gap: 14px; }
 }
+
+/* ديسكتوب (يلغي أي تأثير للموبايل فوق 768px) */
+@media (min-width: 769px){
+  .portfolio-container{
+    display: block !important; /* رجّع الأصل (Bootstrap الأعمدة تشتغل) */
+    gap: 0 !important;
+  }
+  #journal .row{ row-gap: 0 !important; }
+}
+
 
   </style>
 </head>
@@ -745,6 +752,7 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 
