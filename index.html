@@ -157,6 +157,25 @@
     @media (prefers-reduced-motion: reduce){
       *{ transition:none !important; animation:none !important; }
     }
+    /* فكّ اللزق على الموبايل بدون تعديل الـHTML */
+@media (max-width: 768px){
+  .portfolio-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .portfolio-thumbnail img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  #journal .row{
+    row-gap: 14px;
+  }
+}
+
   </style>
 </head>
 
@@ -726,5 +745,6 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
