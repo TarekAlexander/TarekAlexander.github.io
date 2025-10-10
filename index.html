@@ -182,6 +182,25 @@
   #journal .row{ row-gap: 0 !important; }
 }
 
+/* خلّي الحاوية تشتغل مثل Bootstrap row */
+.portfolio-container{
+  display:flex;
+  flex-wrap:wrap;
+  margin-left:-.75rem;
+  margin-right:-.75rem;
+}
+.portfolio-container > [class*="col-"]{
+  padding-left:.75rem;
+  padding-right:.75rem;
+  margin-bottom:1rem;   /* مسافة عامودية */
+}
+
+/* تأكيد سلوك الصور */
+.portfolio-thumbnail img{
+  width:100%;
+  height:auto;
+  display:block;
+}
 
   </style>
 </head>
@@ -449,7 +468,7 @@
           </div>
 
           <div class="portfolio-container">
-            <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits webdesign">
+          <div class="col-12 col-md-6 col-lg-4 portfolio-thumbnail …">…</div>
               <a class="popup-img" href="images/portfolio/1.jpg">
                 <img src="images/portfolio/1.jpg" alt="Partitect app – event planning shopping list UI" loading="lazy">
                 <div class="image-text">PARTITECT APP</div>
@@ -752,6 +771,7 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 
