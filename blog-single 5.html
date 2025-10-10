@@ -141,6 +141,32 @@
     @media (prefers-reduced-motion: reduce){
       *{ transition:none !important; animation:none !important; }
     }
+    /* موبايل: خلّي الاقتباس واضح ومقروء */
+@media (max-width: 576px){
+  .single-post blockquote{
+    background: linear-gradient(90deg, rgba(196,69,69,.16) 0%, rgba(255,255,255,.98) 70%);
+    border-left-width: 5px;
+    color: #1f2937 !important;
+    font-weight: 600;
+    letter-spacing: .2px;
+    line-height: 1.6;
+    padding: 1.1rem 1.25rem;
+    margin: 1.1rem 0;
+  }
+  .single-post blockquote, 
+  .single-post blockquote em, 
+  .single-post blockquote i{
+    color: #1f2937 !important;
+  }
+}
+
+/* تباين أفضل في المود الداكن */
+@media (prefers-color-scheme: dark){
+  .single-post blockquote{
+    background: linear-gradient(90deg, rgba(196,69,69,.30) 0%, rgba(22,32,55,.92) 70%);
+    color: #e5e7eb !important;
+  }
+}
   </style>
 </head>
 
@@ -265,3 +291,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
