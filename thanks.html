@@ -1,44 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: #f8f9fa;
-      font-family: Arial, sans-serif;
-    }
-    .thankyou-box {
-      text-align: center;
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      max-width: 500px;
-      width: 100%;
-    }
-    .thankyou-box h1 {
-      color: #28a745;
-      margin-bottom: 20px;
-    }
-    .thankyou-box p {
-      color: #555;
-      margin-bottom: 30px;
-      font-size: 1.1rem;
-    }
-  </style>
-</head>
-<body>
-  <div class="thankyou-box">
-    <h1>✅ Thank You!</h1>
-    <p>Your message has been sent successfully. I’ll get back to you soon.</p>
-    <a href="/" class="btn btn-danger">Back to Home</a>
+<form id="contactForm" action="https://formspree.io/f/xjkakdqa" method="POST" class="row g-3" novalidate>
+  <div class="col-md-6">
+    <label for="name" class="form-label">Your Name</label>
+    <input type="text" id="name" name="name" class="form-control" required>
   </div>
-</body>
-</html>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Your Email</label>
+    <input type="email" id="email" name="_replyto" class="form-control" required>
+  </div>
+  <div class="col-12">
+    <label for="subject" class="form-label">Subject</label>
+    <input type="text" id="subject" name="subject" class="form-control" required>
+  </div>
+  <div class="col-12">
+    <label for="message" class="form-label">Message</label>
+    <textarea id="message" name="message" rows="6" class="form-control" required></textarea>
+  </div>
+
+  <!-- (اختياري) عنوان الرسالة بالبريد -->
+  <input type="hidden" name="_subject" value="New message from portfolio">
+
+  <div class="col-12">
+    <button id="sendBtn" type="submit" class="btn btn-brand">Send Message</button>
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const btn  = document.getElementById('sendBtn');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        // ✅ تحويل مؤكد بعد الإرسال
+        window.location.href = '/thanks.html'; // أو 'https://designbytarek.se/thanks.html'
+      } else {
+        const data = await res.json().catch(() => ({}));
+        alert((data.errors && data.errors.map(e => e.message).join('\n')) || 'صار خطأ بالإرسال. جرّب لاحقًا.');
+      }
+    } catch (err) {
+      alert('مشكلة اتصال. تأكد من الإنترنت وحاول مرة تانية.');
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
