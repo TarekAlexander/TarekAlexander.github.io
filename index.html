@@ -146,16 +146,17 @@
     #resume .row.equalize .card-body{
       display:flex; flex-direction:column; flex:1 1 auto;
     }
-
+@media (max-width: 768px) {
+  #header.home {
+    background-position: 90% center !important;
+    background-attachment: scroll !important;
+  }
+}
     /* احترام تقليل الحركة */
     @media (prefers-reduced-motion: reduce){
       *{ transition:none !important; animation:none !important; }
     }
-    @media (max-width: 768px) {
-  .hero {
-    background-position: 90% center !important; /* جرّب 85–95% حسب صورتك */
-  }
-}
+  
 
   </style>
 </head>
@@ -212,7 +213,7 @@
         <div class="col-lg-4">
           <div class="div-img-bg">
             <div class="about-img">
-              <img src="images/me.jpg" class="img-responsive" alt="Portrait photo of Tarek Alexander Khnijer" loading="lazy">
+              <img src="images/me.JPG" class="img-responsive" alt="Portrait photo of Tarek Alexander Khnijer" loading="lazy">
             </div>
           </div>
         </div>
@@ -726,3 +727,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
