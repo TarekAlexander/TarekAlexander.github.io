@@ -3,20 +3,24 @@
     <label for="name" class="form-label">Your Name</label>
     <input type="text" id="name" name="name" class="form-control" required>
   </div>
+
   <div class="col-md-6">
     <label for="email" class="form-label">Your Email</label>
-    <input type="email" id="email" name="_replyto" class="form-control" required>
+    <!-- مهم: الاسم لازم email مو _replyto -->
+    <input type="email" id="email" name="email" class="form-control" required>
   </div>
+
   <div class="col-12">
     <label for="subject" class="form-label">Subject</label>
     <input type="text" id="subject" name="subject" class="form-control" required>
   </div>
+
   <div class="col-12">
     <label for="message" class="form-label">Message</label>
     <textarea id="message" name="message" rows="6" class="form-control" required></textarea>
   </div>
 
-  <!-- (اختياري) عنوان الرسالة بالبريد -->
+  <!-- اختياري -->
   <input type="hidden" name="_subject" value="New message from portfolio">
 
   <div class="col-12">
@@ -25,9 +29,11 @@
 </form>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contactForm');
   const btn  = document.getElementById('sendBtn');
-  form.addEventListener('submit', async (e) => {
+
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
     btn.disabled = true;
 
@@ -35,20 +41,20 @@
       const res = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Accept': 'application/json' } // يجبر Formspree يرد JSON بدل ما يوجّه لصفحة خارجية
       });
 
       if (res.ok) {
-        // ✅ تحويل مؤكد بعد الإرسال
-        window.location.href = '/thanks.html'; // أو 'https://designbytarek.se/thanks.html'
+        window.location.href = 'https://designbytarek.se/thanks.html';
       } else {
         const data = await res.json().catch(() => ({}));
         alert((data.errors && data.errors.map(e => e.message).join('\n')) || 'صار خطأ بالإرسال. جرّب لاحقًا.');
       }
     } catch (err) {
-      alert('مشكلة اتصال. تأكد من الإنترنت وحاول مرة تانية.');
+      alert('مشكلة اتصال. جرّب مرة تانية.');
     } finally {
       btn.disabled = false;
     }
   });
+});
 </script>
