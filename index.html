@@ -146,60 +146,15 @@
     #resume .row.equalize .card-body{
       display:flex; flex-direction:column; flex:1 1 auto;
     }
-@media (max-width: 768px) {
-  #header.home {
-    background-position: 90% center !important;
-    background-attachment: scroll !important;
-  }
-}
 
     /* احترام تقليل الحركة */
     @media (prefers-reduced-motion: reduce){
       *{ transition:none !important; animation:none !important; }
     }
-    /* موبايل فقط */
-@media (max-width: 768px){
-  .portfolio-container{
-    display: grid !important;
-    grid-template-columns: 1fr;
-    gap: 14px;
+    @media (max-width: 768px) {
+  .hero {
+    background-position: 90% center !important; /* جرّب 85–95% حسب صورتك */
   }
-  .portfolio-thumbnail img{
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-  }
-  #journal .row{ row-gap: 14px; }
-}
-
-/* ديسكتوب (يلغي أي تأثير للموبايل فوق 768px) */
-@media (min-width: 769px){
-  .portfolio-container{
-    display: block !important; /* رجّع الأصل (Bootstrap الأعمدة تشتغل) */
-    gap: 0 !important;
-  }
-  #journal .row{ row-gap: 0 !important; }
-}
-
-/* خلّي الحاوية تشتغل مثل Bootstrap row */
-.portfolio-container{
-  display:flex;
-  flex-wrap:wrap;
-  margin-left:-.75rem;
-  margin-right:-.75rem;
-}
-.portfolio-container > [class*="col-"]{
-  padding-left:.75rem;
-  padding-right:.75rem;
-  margin-bottom:1rem;   /* مسافة عامودية */
-}
-
-/* تأكيد سلوك الصور */
-.portfolio-thumbnail img{
-  width:100%;
-  height:auto;
-  display:block;
 }
 
   </style>
@@ -257,7 +212,7 @@
         <div class="col-lg-4">
           <div class="div-img-bg">
             <div class="about-img">
-              <img src="images/me.JPG" class="img-responsive" alt="Portrait photo of Tarek Alexander Khnijer" loading="lazy">
+              <img src="images/me.jpg" class="img-responsive" alt="Portrait photo of Tarek Alexander Khnijer" loading="lazy">
             </div>
           </div>
         </div>
@@ -468,7 +423,7 @@
           </div>
 
           <div class="portfolio-container">
-          <div class="col-12 col-md-6 col-lg-4 portfolio-thumbnail …">…</div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits webdesign">
               <a class="popup-img" href="images/portfolio/1.jpg">
                 <img src="images/portfolio/1.jpg" alt="Partitect app – event planning shopping list UI" loading="lazy">
                 <div class="image-text">PARTITECT APP</div>
@@ -654,7 +609,7 @@
       <!-- Card 3 -->
       <div class="col-md-6 col-lg-4 d-flex">
         <div class="card flex-fill h-100">
-          <img src="images/toyota.png" class="card-img-top" alt="Toyota Logistic Design Competition" loading="lazy">
+          <img src="images/Toyota.png" class="card-img-top" alt="Toyota Logistic Design Competition" loading="lazy">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title mb-1">Toyota Logistic Design Competition</h5>
             <p class="text-muted mb-2">Competition Entry • 2025–2026 • Europe</p>
@@ -771,8 +726,3 @@
   <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
-
-
