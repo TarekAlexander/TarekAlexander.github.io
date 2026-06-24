@@ -10,9 +10,9 @@
   <!-- Meta Title -->
   <meta name="title" content="Tarek Alexander Khnijer | Interaction Designer & Portfolio">
   <!-- Meta Description (EN + SV) -->
-  <meta name="description" content="Portfolio of Tarek Alexander Khnijer, Interaction Design student in Malmö. Interaktionsdesigner i Malmö med bakgrund inom företagsekonomi och marknadsföring, fokuserar på UX, prototyper och sensorisk design.">
+  <meta name="description" content="Portfolio of Tarek Alexander Khnijer, Interaction Designer in Malmö focused on UX research, scent interaction, prototyping, and human-centered design process.">
   <!-- Meta Keywords (EN + SV) -->
-  <meta name="keywords" content="Tarek Khnijer, Portfolio, Interaction Design, Interaktionsdesign, UX, UI, Prototyping, Game Testing, Speldesign, Malmö University, Malmö Universitet, Designer, Kreativ strategi, Digitala upplevelser, Scent Interaction">
+  <meta name="keywords" content="Tarek Khnijer, Portfolio, Interaction Design, UX Research, User Research, Scent Interaction, Olfactory Design, Prototyping, Research through Design, Malmö University, Malmö Universitet, Multisensory Interaction">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
@@ -38,12 +38,13 @@
   <!-- ======================= Custom Overrides ======================= -->
   <style>
     :root{
-      --brand:#c44545;        /* أحمر ناعم */
-      --brand-600:#a83232;    /* أغمق للهوفر */
-      --gold:#d4af37;         /* الذهبي */
-      --grey:#dcdcdc;         /* الرمادي الفاتح */
-      --ink:#111111;          /* النص */
-      --bg:#ffffff;           /* الخلفية */
+      --brand:#344c7a;
+      --brand-600:#1f2f4d;
+      --accent:#7aa6a1;
+      --gold:#b7a77e;
+      --grey:#d8e1ea;
+      --ink:#172033;
+      --bg:#f6f8fb;
     }
     #press .card { border:0; box-shadow:0 10px 28px rgba(0,0,0,.08); transition: all .2s ease; }
 #press .card:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(0,0,0,.12); }
@@ -58,6 +59,7 @@
       :root{
         --bg:#0b0f19;
         --ink:#e5e7eb;
+        --accent:#8fbfba;
         --grey:#334155;
       }
       body{ background:var(--bg); color:var(--ink); }
@@ -176,7 +178,7 @@
           <li><a href="#header" class="smoothScroll">Home</a></li>
           <li><a href="#about" class="smoothScroll">About</a></li>
           <li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
-          <li><a href="#journal" class="smoothScroll">Blog</a></li>
+          <li><a href="#journal" class="smoothScroll">Case Studies</a></li>
           <li><a href="#press" class="smoothScroll">Press</a></li>
           <li><a href="#contact" class="smoothScroll">Contact</a></li>
         </ul>
@@ -186,13 +188,22 @@
   </nav>
   <!-- End section navbar -->
 
+  <button class="scent-buddy" type="button" aria-label="Play with the scent buddy">
+    <span class="buddy-cloud">Hey, I am Tarek</span>
+    <span class="buddy-face">
+      <span class="buddy-eye"></span>
+      <span class="buddy-eye"></span>
+      <span class="buddy-smile"></span>
+    </span>
+    <span class="buddy-puff"></span>
+    <span class="buddy-puff"></span>
+  </button>
+
   <!-- start section header -->
   <div id="header" class="home">
     <div class="container">
       <div class="header-content">
         <h1>I'm <span class="typed"></span></h1>
-        <p>Designer, Economist, Strategist, Photographer</p>
-
         <ul class="list-unstyled list-social">
           <li><a href="https://www.facebook.com/share/1CvKpyGq5f/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="ion-social-facebook"></i></a></li>
           <li><a href="https://www.instagram.com/tarekalexanderkhnijer?igsh=MWh1aDJ3eDNhaWhnZA%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="ion-social-instagram"></i></a></li>
@@ -220,8 +231,9 @@
 
         <div class="col-lg-7">
           <div class="about-descr">
-            <p class="p-heading">I'm an aspiring Interaction Design (IxD) student with a unique blend of business acumen and creative flair, dedicated to crafting clean, simple, and engaging digital experiences.</p>
-            <p class="separator">My expertise lies at the intersection of design, business understanding, and technology. With an educational background in business administration and marketing, complemented by a specialization in accounting, I bring a strong analytical and strategic foundation to the field of interaction design.</p>
+            <p class="p-heading">I'm an Interaction Designer focused on UX research, scent interaction, and designing experiences that reveal how people think, respond, and collaborate.</p>
+            <p class="design-statement">I connect research, prototyping, and visual design to create thoughtful experiences that are clear, useful, and human-centered.</p>
+            <p class="separator">My work combines research through design, prototyping, observation, playtesting, and qualitative analysis. I am especially interested in multisensory interaction: how smell, ambiguity, memory, and conversation can shape participation and meaning making in social contexts.</p>
             <a href="pdf/TAREK KHNIJER CV.pdf" class="btn btn-brand"><i class="icon-down-circled2"></i> Download My CV</a>
           </div>
         </div>
@@ -236,8 +248,8 @@
     <div class="container">
       <h3 class="mb-5"><span class="text-brand">My</span> Resume</h3>
 
-      <!-- استخدم equalize + g-4 للمسافات -->
-      <div class="row equalize g-4">
+      <!-- Equal-height resume cards -->
+      <div class="row equalize resume-grid">
         <div class="col-md-6 col-lg-4 d-flex">
           <div class="card flex-fill h-100">
             <div class="card-header">
@@ -247,13 +259,13 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="title text-brand">2021 - 2025</h6>
-              <p>Lantmännen — Machine/Warehouse worker, Malmö</p>
-              <p class="subtitle">Hands-on experience in logistics and warehouse operations: inventory, organizing goods, forklift operations, and efficient delivery handling to meet deadlines.</p>
+              <h6 class="title text-brand">2026</h6>
+              <p>Bachelor Thesis, Malmö University</p>
+              <p class="subtitle">Designed and conducted a Research through Design study on how smell shapes participation, hesitation, turn taking, and collaborative meaning making in second language group activities.</p>
               <hr>
               <h6 class="title text-brand">2024</h6>
               <p>Olfactory Design and Research (ODR) Group, Malmö University</p>
-              <p class="subtitle">Internship with Prof. Simon Niedenthal and Jaz Brooks exploring scent in game design, prototyping and testing mechanics in the IOIO Lab; strengthened teamwork, design craft, and passion for sensory interaction.</p>
+              <p class="subtitle">Internship exploring scent in game design with Prof. Simon Niedenthal and Jaz Brooks. I prototyped, playtested, refined mechanics, and learned how smell can shape uncertainty, memory, and social interaction.</p>
               <div class="mt-auto"></div>
             </div>
           </div>
@@ -268,12 +280,12 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="title text-brand">2022 - Present</h6>
+              <h6 class="title text-brand">2022 - 2026</h6>
               <p>Interaction Design, Malmö University</p>
-              <p class="subtitle">Creating experiences with products and services; building a repertoire of methods, skills, and theoretical perspectives.</p>
+              <p class="subtitle">Focused on UX research, prototyping, interaction design methods, multisensory experiences, and human-centered design practice.</p>
               <hr>
               <h6 class="title text-brand">2020 - 2021</h6>
-              <p>Diploma in Accounting, Stockholm</p>
+              <p>Diploma in Accounting Assistant, Stockholm</p>
               <p class="subtitle">Economics, accounting, and administration: bookkeeping, payments, payroll, and taxes for finance departments, staffing agencies, small businesses, or accounting firms.</p>
               <hr>
               <h6 class="title text-brand">2008 - 2012</h6>
@@ -284,34 +296,23 @@
           </div>
         </div>
 
-        <div class="col-lg-4 d-flex">
+        <div class="col-lg-4 d-flex flex-column">
           <div class="card flex-fill h-100">
             <div class="card-header">
               <div class="pull-left">
-                <h4 class="mt-2">Software</h4>
+                <h4 class="mt-2">Tools</h4>
                 <span class="line"></span>
               </div>
             </div>
             <div class="card-body pb-2">
-              <h6 class="mb-1">HTML5 &amp; CSS3</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="HTML & CSS skill 80%"></div></div>
-
-              <h6 class="mb-1">JavaScript</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript skill 50%"></div></div>
-
-              <h6 class="mb-1">C++</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="C++ skill 50%"></div></div>
-
-              <h6 class="mb-1">Adobe Illustrator</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100" aria-label="Illustrator skill 69%"></div></div>
-
-              <h6 class="mb-1">API</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" aria-label="API skill 30%"></div></div>
-
-              <h6 class="mb-1">Figma</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Figma skill 90%"></div></div>
-
-              <div class="mt-auto"></div>
+              <ul class="skill-list skill-list-compact list-unstyled">
+                <li><span class="skill-mark"></span><strong>HTML5 &amp; CSS3</strong></li>
+                <li><span class="skill-mark"></span><strong>JavaScript</strong></li>
+                <li><span class="skill-mark"></span><strong>C++</strong></li>
+                <li><span class="skill-mark"></span><strong>Adobe Illustrator</strong></li>
+                <li><span class="skill-mark"></span><strong>API</strong></li>
+                <li><span class="skill-mark"></span><strong>Figma</strong></li>
+              </ul>
             </div>
           </div>
 
@@ -323,28 +324,15 @@
               </div>
             </div>
             <div class="card-body pb-2">
-              <h6 class="mb-1">Game Testing</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Game testing 70%"></div></div>
-
-              <h6 class="mb-1">User Research</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="User research 50%"></div></div>
-
-              <h6 class="mb-1">Ideation & Sketching</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" aria-label="Ideation & Sketching 66%"></div></div>
-
-              <h6 class="mb-1">Wireframing & Prototyping</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Wireframing & Prototyping 70%"></div></div>
-
-              <h6 class="mb-1">Usability Testing</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Usability testing 50%"></div></div>
-
-              <h6 class="mb-1">Copywriting</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" aria-label="Copywriting 57%"></div></div>
-
-              <h6 class="mb-1">Scent Interaction</h6>
-              <div class="progress mb-3"><div class="progress-bar bg-brand" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="Scent interaction 55%"></div></div>
-
-              <div class="mt-auto"></div>
+              <ul class="skill-list skill-list-compact list-unstyled">
+                <li><span class="skill-mark"></span><strong>Game Testing</strong></li>
+                <li><span class="skill-mark"></span><strong>User Research</strong></li>
+                <li><span class="skill-mark"></span><strong>Ideation &amp; Sketching</strong></li>
+                <li><span class="skill-mark"></span><strong>Wireframing &amp; Prototyping</strong></li>
+                <li><span class="skill-mark"></span><strong>Usability Testing</strong></li>
+                <li><span class="skill-mark"></span><strong>Copywriting</strong></li>
+                <li><span class="skill-mark"></span><strong>Scent Interaction</strong></li>
+              </ul>
             </div>
           </div>
 
@@ -367,8 +355,8 @@
 
         <div class="services-block">
           <i class="ion-ios-lightbulb-outline" aria-hidden="true"></i>
-          <span>ECONOMIST</span>
-          <p class="separator">With a solid foundation in economic principles, I analyze market trends and data, providing insights that inform strategic decision-making and innovative solutions.</p>
+          <span>UX RESEARCH</span>
+          <p class="separator">I study how people participate, respond, hesitate, and make meaning through interviews, observation, video analysis, and structured reflection.</p>
         </div>
 
         <div class="services-block">
@@ -385,14 +373,14 @@
 
         <div class="services-block">
           <i class="ion-ios-analytics-outline" aria-hidden="true"></i>
-          <span>STRATEGIST</span>
-          <p class="separator">I apply a blend of analytical and creative thinking to develop comprehensive strategies that align with business goals, driving growth and competitive advantage.</p>
+          <span>DESIGN PROCESS</span>
+          <p class="separator">I turn messy questions into testable activities, then use findings from each iteration to shape the next prototype, rule, or interaction structure.</p>
         </div>
 
         <div class="services-block">
           <i class="ion-ios-camera-outline" aria-hidden="true"></i>
-          <span>PHOTOGRAPHY</span>
-          <p class="separator">Capturing moments with precision and creativity to tell stories, highlight products, and enhance brand identities through visual storytelling.</p>
+          <span>SCENT INTERACTION</span>
+          <p class="separator">I explore smell as an active design material that can shape memory, uncertainty, social play, and collaborative meaning making.</p>
         </div>
 
       </div>
@@ -479,7 +467,7 @@
   <div id="journal" class="text-left paddsection">
     <div class="container">
       <div class="section-title text-center">
-        <h2>Journal</h2>
+        <h2>Case Studies</h2>
       </div>
     </div>
 
@@ -489,10 +477,10 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="journal-info">
-              <a href="blog-single 4.html"><img src="images/blog-post-big.vest.jpg" class="img-responsive" alt="SafePause Vest wearable concept" loading="lazy"></a>
+              <a href="blog-single-thesis.html"><img src="images/blog-post-thesis.jpg" class="img-responsive" alt="Thesis cover: Smell as a Learning Material" loading="lazy"></a>
               <div class="journal-txt">
-                <h4><a href="blog-single 4.html">SafePause Vest</a></h4>
-                <p class="separator">The SafePause Vest proposes automating breaks in warehouses to maintain alertness and reduce error by nudging regular pauses in high-risk environments.</p>
+                <h4><a href="blog-single-thesis.html">Smell as a Learning Material</a></h4>
+                <p class="separator">Bachelor thesis case study: using Research through Design to explore how smell shapes participation, turn taking, hesitation, and collaborative meaning making in second language group activities.</p>
               </div>
             </div>
           </div>
@@ -502,7 +490,7 @@
               <a href="blog-single 5.html"><img src="images/blog-post-big.playtesting.jpg" class="img-responsive" alt="Playtesting session – sniff bluffing mechanic" loading="lazy"></a>
               <div class="journal-txt">
                 <h4><a href="blog-single 5.html">Game Design &amp; Playtesting</a></h4>
-                <p class="separator">With Simon Niedenthal at Malmö University, I explored game mechanics and refined “sniff bluffing” through iterative playtests, blending sensory cues with strategy.</p>
+                <p class="separator">An iterative playtesting project where I refined rules, scent clues, timing, and player feedback to understand how smell can create uncertainty, social play, and strategy.</p>
               </div>
             </div>
           </div>
@@ -512,27 +500,7 @@
               <a href="blog-single 6.html"><img src="images/blog-post-big.dexter.jpg" class="img-responsive" alt="Smell Dexter: Red Cards – scent detective game concept" loading="lazy"></a>
               <div class="journal-txt">
                 <h4><a href="blog-single 6.html">Smell Dexter</a></h4>
-                <p class="separator">Smell Dexter: Red Cards is a scent-detective game exploring cognitive dissonance—players read conflicting scent clues and decide which to trust.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info">
-              <a href="blog-single.html"><img src="images/blog-post-1.gif" class="img-responsive" alt="Climatise Scent – trigeminal stimulation & temperature perception" loading="lazy"></a>
-              <div class="journal-txt">
-                <h4><a href="blog-single.html">Climatise Scent</a></h4>
-                <p class="separator">Exploring digital olfaction to influence temperature perception via trigeminal nerve stimulation—bridging scent art and interaction science.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="journal-info">
-              <a href="blog-single2.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="Partitect – minimalist planning UI" loading="lazy"></a>
-              <div class="journal-txt">
-                <h4><a href="blog-single2.html">Partitect</a></h4>
-                <p class="separator">Event planning rethought with a user-praised shopping list. Minimalist design, continuous improvements from feedback, and accessibility in focus.</p>
+                <p class="separator">A scent-detective game concept where I used conflicting clues to explore trust, interpretation, and decision making when sensory information feels uncertain.</p>
               </div>
             </div>
           </div>
@@ -542,7 +510,37 @@
               <a href="blog-single3.html"><img src="images/blog-post-3.jpg" class="img-responsive" alt="AR Wound Monitoring – remote post-op care concept" loading="lazy"></a>
               <div class="journal-txt">
                 <h4><a href="blog-single3.html">(AR) Wound Monitoring</a></h4>
-                <p class="separator">A concept for precise wound tracking and better doctor–patient continuity in remote settings using AR and sensors.</p>
+                <p class="separator">A healthcare concept exploring how AR and sensor-based tracking could support remote wound monitoring, clearer patient communication, and continuity of care.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single.html"><img src="images/blog-post-1.gif" class="img-responsive" alt="Climatise Scent – trigeminal stimulation & temperature perception" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single.html">Climatise Scent</a></h4>
+                <p class="separator">A multisensory prototype exploring how scent and trigeminal stimulation could influence perceived temperature, comfort, and environmental interaction.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single2.html"><img src="images/blog-post-2.jpg" class="img-responsive" alt="Partitect – minimalist planning UI" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single2.html">Partitect</a></h4>
+                <p class="separator">A planning app concept developed through user feedback, with focus on simplifying event preparation, shopping lists, accessibility, and everyday decision making.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="journal-info">
+              <a href="blog-single 4.html"><img src="images/blog-post-big.vest.jpg" class="img-responsive" alt="SafePause Vest wearable concept" loading="lazy"></a>
+              <div class="journal-txt">
+                <h4><a href="blog-single 4.html">SafePause Vest</a></h4>
+                <p class="separator">A safety concept shaped from warehouse work experience: I explored how wearable prompts could support better break timing, attention, and safer routines in high-pressure logistics environments.</p>
               </div>
             </div>
           </div>
@@ -561,7 +559,7 @@
       <p class="mb-0">Highlights from Scent Club activities, showcases, and competition entries.</p>
     </div>
 
-    <div class="row g-4">
+    <div class="row press-grid justify-content-center">
 
       <!-- Card 1 -->
       <div class="col-md-6 col-lg-4 d-flex">
@@ -573,10 +571,10 @@
             <p class="card-text">
                olfactory interactions with the Olfactory Design &amp; Research group.
             </p>
-            <div class="mt-auto d-flex gap-2 flex-wrap">
-              <span class="badge bg-light text-dark border">Olfactory</span>
-              <span class="badge bg-light text-dark border">Playtesting</span>
-              <span class="badge bg-light text-dark border">Exhibition</span>
+            <div class="tag-list mt-auto">
+              <span class="badge badge-light text-dark border">Olfactory</span>
+              <span class="badge badge-light text-dark border">Playtesting</span>
+              <span class="badge badge-light text-dark border">Exhibition</span>
             </div>
          </div>
          <!-- <div class="card-footer bg-transparent">
@@ -591,14 +589,14 @@
           <img src="images/membership-certificate.jpg" class="card-img-top" alt="Membership Certificate" loading="lazy">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title mb-1">Interaction Design Foundation</h5>
-            <p class="text-muted mb-2"> • 2025 • Hello World</p>
+            <p class="text-muted mb-2">2025</p>
             <p class="card-text">
               Membership Certificate
             </p>
-            <div class="mt-auto d-flex gap-2 flex-wrap">
-              <span class="badge bg-light text-dark border">UX</span>
-              <span class="badge bg-light text-dark border">UI</span>
-              <span class="badge bg-light text-dark border">IxDF</span>
+            <div class="tag-list mt-auto">
+              <span class="badge badge-light text-dark border">UX</span>
+              <span class="badge badge-light text-dark border">UI</span>
+              <span class="badge badge-light text-dark border">IxDF</span>
             </div>
           </div>
          <!--  <div class="card-footer bg-transparent">
@@ -610,22 +608,19 @@
       <!-- Card 3 -->
       <div class="col-md-6 col-lg-4 d-flex">
         <div class="card flex-fill h-100">
-          <img src="images/toyota.png" class="card-img-top" alt="Toyota Logistic Design Competition" loading="lazy">
+          <img src="images/almhult-home-of-the-home.png" class="card-img-top press-logo-img" alt="Älmhult Home of the Home logo" loading="lazy">
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title mb-1">Toyota Logistic Design Competition</h5>
-            <p class="text-muted mb-2">Competition Entry • 2025–2026 • Europe</p>
+            <h5 class="card-title mb-1">Älmhult Home of the Home Lab</h5>
+            <p class="text-muted mb-2">Älmhult, Sweden • Early-stage ideas • Home futures</p>
             <p class="card-text">
-              Concept exploring logistics, safety, and sustainable interaction design.
+              Home of the Home Lab is a meeting place for early-stage ideas and people dreaming up new ways of living at home. Everything happens in Älmhult and is rooted in the entrepreneurial spirit of Småland.
             </p>
-            <div class="mt-auto d-flex gap-2 flex-wrap">
-              <span class="badge bg-light text-dark border">Competition</span>
-              <span class="badge bg-light text-dark border">Logistics</span>
-              <span class="badge bg-light text-dark border">Sustainability</span>
+            <div class="tag-list mt-auto">
+              <span class="badge badge-light text-dark border">Älmhult</span>
+              <span class="badge badge-light text-dark border">Home Futures</span>
+              <span class="badge badge-light text-dark border">Ideas</span>
             </div>
           </div>
-         <!--  <div class="card-footer bg-transparent">
-            <a href="#" class="btn btn-brand btn-sm">Concept PDF</a>
-          </div>-->
         </div>
       </div>
 
@@ -715,25 +710,7 @@
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>
 
-  <!-- Typed init (لو مش مفعّل داخل main.js) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      if (window.Typed){
-        new Typed('.typed', {
-          strings: ['Interaction Designer','UX Researcher','Product Thinker','Scent & Game Prototyper'],
-          typeSpeed: 60, backSpeed: 35, backDelay: 1200, loop: true
-        });
-      }
-    });
-  </script>
-
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
-
-
-

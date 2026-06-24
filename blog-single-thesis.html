@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Smell as a Learning Material | Thesis Case Study</title>
+  <meta name="description" content="Bachelor thesis case study by Tarek Alexander Khnijer exploring smell as an interaction material in small group second language activities through UX research, Research through Design, prototyping, observation, interviews, and interaction analysis.">
+  <meta name="keywords" content="UX research, interaction design, scent interaction, olfactory design, Research through Design, thesis, participation, second language learning, Malmö University, Tarek Alexander Khnijer">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+  <link href="css/blog.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <style>
+    :root{
+      --brand:#c44545;
+      --brand-600:#a83232;
+      --ink:#111111;
+      --bg:#ffffff;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0f19; --ink:#e5e7eb; }
+      body{ background:var(--bg); color:var(--ink); }
+    }
+    body{ background:var(--bg); color:var(--ink); }
+    a{ color:var(--brand); text-decoration:none; transition:color .2s ease; }
+    a:hover{ color:var(--brand-600); }
+    a:focus{ outline:3px solid var(--brand-600); outline-offset:2px; border-radius:4px; }
+
+    #main-nav-subpage.subpage-nav{
+      position: sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    @media (prefers-color-scheme: dark){
+      #main-nav-subpage.subpage-nav{
+        background:rgba(11,15,25,.88);
+        border-bottom-color:rgba(255,255,255,.08);
+      }
+    }
+    #main-nav-subpage .nav-menu li a{ color:var(--ink); }
+    #main-nav-subpage .nav-menu li a:hover{ color:var(--brand-600); }
+    .nav-menu{ display:flex; gap:18px; justify-content:center; }
+
+    .main-content{ padding-top:48px; }
+    .single-main .block-main{
+      background:#fff;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 10px 28px rgba(0,0,0,.08);
+    }
+    @media (prefers-color-scheme: dark){
+      .single-main .block-main{ background:#0f1524; }
+    }
+    .single-main .block-main img{
+      width:100%;
+      max-height:520px;
+      object-fit:cover;
+      object-position:top center;
+      display:block;
+    }
+    .single-post .journal-txt h4 a{
+      color:var(--ink);
+      font-family:"Playfair Display", serif;
+      font-size:28px;
+      line-height:1.25;
+      font-weight:700;
+    }
+    .post-meta ul{ display:flex; flex-wrap:wrap; gap:14px; padding-left:0; }
+    .post-meta li{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:#666;
+      font-size:14px;
+      background:#f5f5f7;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    @media (prefers-color-scheme: dark){
+      .post-meta li{ background:#162037; color:#b7c0d1; }
+    }
+    .single-post .padDiv{ padding:24px 24px 28px; }
+    @media (min-width:768px){
+      .single-post .padDiv{ padding:32px 36px 40px; }
+    }
+    .single-post p{ line-height:1.75; margin-bottom:1.1rem; }
+    .single-post h5{
+      color:var(--ink);
+      font-weight:700;
+      margin:1.8rem 0 .7rem;
+    }
+    .case-list{
+      padding-left:1.2rem;
+      margin-bottom:1.2rem;
+    }
+    .case-list li{
+      color:#777;
+      line-height:1.7;
+      margin-bottom:.45rem;
+    }
+    @media (prefers-color-scheme: dark){
+      .case-list li{ color:#c0c7d4; }
+    }
+    .single-post blockquote{
+      margin:1.4rem 0;
+      padding:1rem 1.25rem;
+      border-left:4px solid var(--brand);
+      background:linear-gradient(90deg, rgba(196,69,69,.10), transparent 65%);
+      border-radius:8px;
+      font-style:italic;
+      color:var(--ink);
+    }
+    .btn-brand{
+      background:var(--brand);
+      border-color:var(--brand);
+      color:#fff;
+      box-shadow:0 6px 16px rgba(0,0,0,.08);
+      transition:all .2s ease;
+    }
+    .btn-brand:hover{
+      background:var(--brand-600);
+      border-color:var(--brand-600);
+      color:#fff;
+      transform:translateY(-2px);
+      box-shadow:0 12px 24px rgba(0,0,0,.12);
+    }
+    @media (max-width:575.98px){
+      .single-main .block-main img{ max-height:360px; }
+      .nav-menu{ gap:12px; font-size:14px; }
+      .single-post .journal-txt h4 a{ font-size:24px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="main-nav-subpage" class="subpage-nav">
+    <div class="row">
+      <div class="container">
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round" aria-label="Open navigation"></i></div>
+        <ul class="nav-menu list-unstyled">
+          <li><a href="index.html#header" class="smoothScroll">Home</a></li>
+          <li><a href="index.html#about" class="smoothScroll">About</a></li>
+          <li><a href="index.html#portfolio" class="smoothScroll">Portfolio</a></li>
+          <li><a href="index.html#journal" class="smoothScroll">Case Studies</a></li>
+          <li><a href="index.html#contact" class="smoothScroll">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content paddsection">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-9">
+          <div class="row">
+            <div class="container-main single-main">
+              <div class="col-md-12">
+                <div class="block-main mb-30">
+                  <img src="images/blog-post-thesis.jpg" class="img-responsive" alt="Smell as a Learning Material thesis cover" loading="lazy">
+                  <div class="content-main single-post padDiv">
+                    <div class="journal-txt">
+                      <h4><a href="#">Smell as a Learning Material</a></h4>
+                    </div>
+
+                    <div class="post-meta">
+                      <ul class="list-unstyled mb-0">
+                        <li class="author">role: <a href="#">UX Researcher / Interaction Designer</a></li>
+                        <li class="date">context: <a href="#">Bachelor Thesis, VT2026</a></li>
+                        <li class="commont"><i class="ion-ios-flask-outline" aria-hidden="true"></i> scent interaction</li>
+                      </ul>
+                    </div>
+
+                    <p class="mb-30"><strong>Project Overview</strong><br>
+                      This thesis explored how smell can work as an interaction material in small group second language activities. Instead of measuring language performance, I focused on participation: who speaks, how people respond, when hesitation appears, and how a group builds meaning together around an ambiguous sensory material.
+                    </p>
+
+                    <blockquote>My design question was not "does smell make people learn faster?" It was "how does smell change the way people participate, interpret, and collaborate?"</blockquote>
+
+                    <h5>The Problem I Investigated</h5>
+                    <p>
+                      Most language activities rely on words, images, or speech. Smell is usually treated as background atmosphere, even though it can trigger memory, uncertainty, and personal interpretation. I wanted to understand whether smell could become an active material for social interaction, especially in adult second language contexts where participation matters.
+                    </p>
+
+                    <h5>My Role</h5>
+                    <ul class="case-list">
+                      <li>Designed the research question and study structure.</li>
+                      <li>Created and iterated smell-based group activities across six sessions.</li>
+                      <li>Ran activities at Hyllie Park, Kvarnby, and Glokala folkhögskolor.</li>
+                      <li>Collected data through observation, video/audio recording, field notes, and interviews.</li>
+                      <li>Analyzed participation through initiation, response, collaborative building, and withdrawal.</li>
+                    </ul>
+
+                    <h5>Research And Design Method</h5>
+                    <p>
+                      I used a Research through Design approach. The project was not one final prototype. It was a sequence of designed activities where each session taught me something about smell, rules, turn taking, and group interaction.
+                    </p>
+                    <ul class="case-list">
+                      <li><strong>Session 1:</strong> tested a simple familiar smell and one shared sentence.</li>
+                      <li><strong>Session 2:</strong> shifted toward collaborative storytelling and unfamiliar smells.</li>
+                      <li><strong>Session 3:</strong> added game structure and competition.</li>
+                      <li><strong>Session 4:</strong> removed competition and moved toward playful interaction.</li>
+                      <li><strong>Session 5:</strong> tested structured turn taking to support collaborative building.</li>
+                      <li><strong>Session 6:</strong> introduced shifting roles and more unpredictable social play.</li>
+                    </ul>
+
+                    <h5>Design Thinking In The Process</h5>
+                    <p>
+                      One important learning was that smell alone does not create better participation. The structure around the smell matters. When the activity became too competitive, people focused more on performance. When the rules supported storytelling and turn taking, the same kind of ambiguity helped participants compare interpretations, respond to each other, and build ideas together.
+                    </p>
+
+                    <h5>Key Findings</h5>
+                    <ul class="case-list">
+                      <li>Smell changed the form of participation rather than simply increasing the amount of talk.</li>
+                      <li>Familiar smells created faster and more confident responses.</li>
+                      <li>Unfamiliar smells created more hesitation, interpretation, and negotiation.</li>
+                      <li>Silence was not always disengagement. Sometimes it showed active thinking and meaning making.</li>
+                      <li>Small rule changes had a large effect on collaboration, turn taking, and response patterns.</li>
+                    </ul>
+
+                    <h5>What This Shows About My UX Practice</h5>
+                    <p>
+                      This project shows how I think as a designer: I start from a human behavior question, create a testable situation, observe what actually happens, and let the findings reshape the next iteration. I do not only design screens or objects. I design conditions for interaction and study how people make sense of them together.
+                    </p>
+
+                    <p>
+                      <a href="pdf/IDB_Thesis_Tarek_VT2026.pdf" class="btn btn-brand mt-2" target="_blank" rel="noopener">View Thesis PDF</a>
+                      <a href="index.html#journal" class="btn btn-brand mt-2">Back to Case Studies</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
