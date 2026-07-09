@@ -92,7 +92,10 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
     var action = $(this).attr('action');
     if( ! action ) {
-      action = 'contactform/contactform.php';
+      $("#sendmessage").removeClass("show");
+      $("#errormessage").addClass("show");
+      $('#errormessage').html('Please add a form action before publishing this form.');
+      return false;
     }
     $.ajax({
       type: "POST",
